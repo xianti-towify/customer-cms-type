@@ -4,10 +4,10 @@
  * @date 2022/2/16
  */
 
-export namespace CustomerCmsType {
+export namespace CustomerCms {
   export type LoadPageStyle = 'loadMore' | 'pageIndex';
 
-  export type FieldInfoType = {
+  export type FieldValueType = {
     hashName: string;
     displayName: string;
     type: string;
@@ -25,7 +25,7 @@ export namespace CustomerCmsType {
     data: { [key: string]: string | number | boolean | Date | object | ReferenceValueType };
   };
 
-  export type DisplayItemType = {
+  export type DisplayValueType = {
     value: string | number | boolean | Date | object;
     isEditable: boolean;
     isRequired?: boolean;
@@ -37,13 +37,13 @@ export namespace CustomerCmsType {
     referenceDataDisplayType?: string;
   };
 
-  export type CollectionItemType = FieldInfoType | DisplayItemType;
+  export type CollectionItemType = FieldValueType | DisplayValueType;
 
   export type QueryType = string | 'custom' | 'referenceComponent' | 'referenceModel';
 
-  export type QueryItemType =
-    | FieldInfoType
-    | DisplayItemType
+  export type QueryValueType =
+    | FieldValueType
+    | DisplayValueType
     | {
         operator: string;
         valueType: QueryType;
