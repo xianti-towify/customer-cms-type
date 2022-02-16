@@ -4,7 +4,7 @@
  * @date 2022/2/16
  */
 
-import type { FieldInfoType } from '@towify-types/live-data';
+import type { FieldInfoType, FieldValueType, QueryFieldPathType } from '@towify-types/live-data';
 import { QueryConditionEnum } from '@towify-types/live-data';
 
 export namespace CustomerCms {
@@ -18,22 +18,17 @@ export namespace CustomerCms {
     reference?: ReferenceType;
   };
 
-  export type ReferenceValueType = {
-    _id: string;
-    data: { [key: string]: string | number | boolean | Date | object | ReferenceValueType };
-  };
-
   export type CollectionFieldInfoType = FieldInfoType & {
     referenceDataDisplayType?: string;
     reference?: ReferenceType;
   };
 
   export type DisplayValueType = {
-    value: string | number | boolean | Date | object;
+    isEditable: boolean;
+    isRequired: boolean;
+    value?: FieldValueType | null;
     referenceTable?: string;
-    referenceValue?: {
-      [key: string]: string | number | boolean | Date | object | ReferenceValueType;
-    };
+    referenceValue?: FieldValueType;
     reference?: { [key: string]: string | ReferenceType };
     referenceDataDisplayType?: string;
   };
@@ -52,5 +47,13 @@ export namespace CustomerCms {
     displayOperators: QueryConditionEnum[];
     displayOperator: QueryConditionEnum;
     hideConditionValueInput: boolean;
+  };
+
+  export type ConditionType = {
+    title: string;
+    isCustom: boolean;
+    fieldPath: QueryFieldPathType;
+    value: FieldValueType | FieldValueType[];
+    condition: QueryConditionEnum;
   };
 }
