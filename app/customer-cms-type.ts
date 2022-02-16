@@ -38,4 +38,14 @@ export namespace CustomerCmsType {
   };
 
   export type CollectionItemType = FieldInfoType | DisplayItemType;
+
+  export type QueryType = string | 'custom' | 'referenceComponent' | 'referenceModel';
+
+  export type QueryItemType =
+    | FieldInfoType
+    | DisplayItemType
+    | {
+        operator: string;
+        valueType: QueryType;
+      };
 }
