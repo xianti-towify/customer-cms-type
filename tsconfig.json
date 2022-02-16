@@ -1,0 +1,22 @@
+{
+  "compilerOptions": {
+    "strict": true,
+    "target": "es6",
+    "lib": ["es2017", "es7", "es6", "dom"],
+    "module": "commonJS",
+    "moduleResolution": "node",
+    "declaration": true,
+    "noImplicitAny": true,
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
+    "sourceMap": false,
+    "outDir": "dist",
+    "typeRoots": ["node_modules/@types", "types"],
+    "baseUrl": ".",
+    "paths": {
+      "*": ["node_modules/*"]
+    }
+  },
+  "include": ["app/**/*.ts"],
+  "exclude": ["../app", "dist", "app/test", "node_modules/*"]
+}
