@@ -14,7 +14,7 @@ testem.log
 /out-tsc
 # Only exists if Bazel was run
 /bazel-out
-
+/.npmrc
 # dependgencies
 /node_modules
 

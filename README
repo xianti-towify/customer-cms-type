@@ -1,1 +1,13 @@
 README.md
+{
+  "name": "customer-cms-type",
+  "description": "editor user-cms",
+  "license": "ISC",
+  "version": "0.0.1",
+  "main": "index.js",
+  "types": "index.d.ts",
+  "bundleDependencies": false,
+  "peerDependencies": {},
+  "dependencies": {},
+  "private": false
+}
