@@ -4,7 +4,8 @@
  * @date 2022/2/16
  */
 
-import { FieldInfoType } from '@towify-types/live-data';
+import type { FieldInfoType } from '@towify-types/live-data';
+import { QueryConditionEnum } from '@towify-types/live-data';
 
 export namespace CustomerCms {
   export type PermissionType = { [key in 'create' | 'update' | 'delete' | string]: boolean };
@@ -46,4 +47,10 @@ export namespace CustomerCms {
       operator: string;
       valueType: QueryType;
     };
+
+  export type QueryItemDisplayType = QueryItemType & {
+    displayOperators: QueryConditionEnum[];
+    displayOperator: QueryConditionEnum;
+    hideConditionValueInput: boolean;
+  };
 }
