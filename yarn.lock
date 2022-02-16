@@ -1235,6 +1235,11 @@
   resolved "https://registry.yarnpkg.com/@tootallnate/once/-/once-1.1.2.tgz#ccb91445360179a04e7fe6aff78c00ffc1eeaf82"
   integrity sha512-RbzJvlNzmRq5c3O09UipeuXno4tA1FE6ikOjxZK0tuxVv3412l64l5t1W5pj4+rJq9vpkm/kwiR07aZXnsKPxw==
 
+"@towify-types/live-data@^0.1.0":
+  version "0.1.0"
+  resolved "https://registry.yarnpkg.com/@towify-types/live-data/-/live-data-0.1.0.tgz#868b61d470a4270ed62962ea7cb626a575c929a6"
+  integrity sha512-Yu4rZISa2Z80ePxustBJiygaH9foAYsH21Ewfuu1v2LM6Dzpyu29+KT3sXAbzMkxa9GUHZgptebIQVWUrtHFCw==
+
 "@types/babel__core@^7.0.0", "@types/babel__core@^7.1.7":
   version "7.1.18"
   resolved "https://registry.yarnpkg.com/@types/babel__core/-/babel__core-7.1.18.tgz#1a29abcc411a9c05e2094c98f9a1b7da6cdf49f8"

@@ -4,15 +4,12 @@
  * @date 2022/2/16
  */
 
-export namespace CustomerCms {
-  export type LoadPageStyle = 'loadMore' | 'pageIndex';
+import { FieldInfoType } from '@towify-types/live-data';
 
-  export type FieldValueType = {
-    hashName: string;
-    displayName: string;
-    type: string;
-    columnWidth: number;
-  };
+export namespace CustomerCms {
+  export type PermissionType = { [key in 'create' | 'update' | 'delete' | string]: boolean };
+
+  export type LoadPageStyle = 'loadMore' | 'pageIndex';
 
   export type ReferenceType = {
     referenceTableHashName: string;
@@ -25,10 +22,13 @@ export namespace CustomerCms {
     data: { [key: string]: string | number | boolean | Date | object | ReferenceValueType };
   };
 
+  export type CollectionFieldInfoType = FieldInfoType & {
+    referenceDataDisplayType?: string;
+    reference?: ReferenceType;
+  };
+
   export type DisplayValueType = {
     value: string | number | boolean | Date | object;
-    isEditable: boolean;
-    isRequired?: boolean;
     referenceTable?: string;
     referenceValue?: {
       [key: string]: string | number | boolean | Date | object | ReferenceValueType;
@@ -37,15 +37,13 @@ export namespace CustomerCms {
     referenceDataDisplayType?: string;
   };
 
-  export type CollectionItemType = FieldValueType | DisplayValueType;
-
   export type QueryType = string | 'custom' | 'referenceComponent' | 'referenceModel';
 
-  export type QueryValueType =
-    | FieldValueType
-    | DisplayValueType
-    | {
-        operator: string;
-        valueType: QueryType;
-      };
+  export type FormItemType = FieldInfoType & DisplayValueType;
+
+  export type QueryItemType = FieldInfoType &
+    DisplayValueType & {
+      operator: string;
+      valueType: QueryType;
+    };
 }
